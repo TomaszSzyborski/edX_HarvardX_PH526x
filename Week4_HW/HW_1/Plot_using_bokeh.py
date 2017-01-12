@@ -1,11 +1,12 @@
 # First, we import a tool to allow text to pop up on a plot when the cursor
 # hovers over it.  Also, we import a data structure used to store arguments
 # of what to plot in Bokeh.  Finally, we will use numpy for this section as well!
-
+from bokeh.io import output_file, show
 from bokeh.models import HoverTool, ColumnDataSource
 import numpy as np
 
 # Let's plot a simple 5x5 grid of squares, alternating in color as red and blue.
+from bokeh.plotting import figure
 
 plot_values = [1,2,3,4,5]
 plot_colors = ["red", "blue"]
