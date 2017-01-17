@@ -26,5 +26,18 @@ print(g.number_of_nodes())
 G1_LCC = max(nx.connected_component_subgraphs(G1), key=len)
 G2_LCC = max(nx.connected_component_subgraphs(G2), key=len)
 
-print(G1_LCC)
-print(G2_LCC)
+print(G1_LCC.number_of_nodes())
+print(G2_LCC.number_of_nodes())
+
+# largest connected components
+print(G1_LCC.number_of_nodes() / G1.number_of_nodes())
+print(G2_LCC.number_of_nodes() / G2.number_of_nodes())
+
+plt.figure()
+nx.draw(G1_LCC, node_color="red", edge_color="gray", node_size=20)
+plt.savefig("village1.pdf")
+plt.clf()
+
+plt.figure()
+nx.draw(G2_LCC, node_color="green", edge_color="gray", node_size=20)
+plt.savefig("village2.pdf")
